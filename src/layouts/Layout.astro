@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 ---
@@ -13,14 +14,17 @@ import Footer from "../components/Footer.astro"
 		<link rel="stylesheet" href="/src/styles/global.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
+		<ViewTransitions />
 	</head>
-	<div class="flex">
-	<Header></Header>
-	<main class="h-100 w-full overflow-scroll">
-		<slot />
-	</main>
-	</div>
-	<Footer></Footer>
+	<body>
+		<div class="flex">
+			<Header />
+			<main class="h-100 w-full overflow-scroll">
+				<slot />
+			</main>
+		</div>
+		<Footer />
+	</body>
 </html>
 
 <style>
@@ -32,13 +36,13 @@ import Footer from "../components/Footer.astro"
 		background-color: #181818;
 		color: white;
 	}
-a {
-  color: inherit; 
-  text-decoration: none;  /* 下線も消す */
-}
+	
+	a {
+		color: inherit; 
+		text-decoration: none;
+	}
 
-a:hover {
-  text-decoration: underline;
-}
-
+	a:hover {
+		text-decoration: underline;
+	}
 </style>
