@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+
+const works = await getCollection('works');
+---
+
+<Layout>
+  <main>
+    <h1>WORKS</h1>
+    <ul>
+      {
+        works.map((work) => (
+          <li>
+            <a href={`/works/${work.id}`}>
+              <h2>{work.data.title}</h2>
+              <p>{work.data.description}</p>
+              <time datetime={work.data.pubDate.toISOString()}>
+                {work.data.pubDate.toLocaleDateString('ja-JP')}
+              </time>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
+</Layout>

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 
 const posts = await getCollection('blog');
-// const sortedPosts = posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
+const works = await getCollection('works');
 ---
 
 <header class="font-ibm h-100 w-[30%] bg-gray-500">
@@ -12,11 +12,14 @@ const posts = await getCollection('blog');
     <a class="gap- flex" href="/"><img src="/file.svg" alt="" />Home.rkt</a>
     <a class="" href="/about">about.rkt</a>
     <details id="works-details">
-      <summary>WORKS</summary>
-      <a class="" href="/works/kyosuke">KyosukeSato.rkt</a>
-      <a class="" href="/works/portfolio">Portfolio.rkt</a>
-      <a class="" href="/works/sugutabe">Sugutabe.rkt</a>
-      <a class="" href="/works/design-school">DesignSchoolLp.rkt</a>
+      <summary><a href="/works">WORKS</a></summary>
+      {
+        works.map((work) => (
+          <a class="" href={`/works/${work.id}`}>
+            {work.data.title}.rkt
+          </a>
+        ))
+      }
     </details>
     <details id="blogs-details">
       <summary>Blogs</summary>
