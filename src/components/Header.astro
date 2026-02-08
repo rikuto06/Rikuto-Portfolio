@@ -1,50 +1,60 @@
 ---
+import { getCollection } from 'astro:content';
 
-
+const posts = await getCollection('blog');
+// const sortedPosts = posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
 ---
+
 <header class="font-ibm h-100 w-[30%] bg-gray-500">
-    <a href="/">RIKUTO NAKAO</a>
-    <details class="" id="main-details" open>
-        <summary>my-portfolio</summary>
-        <a class="flex gap-" href="/"><img src="/file.svg" alt="">Home.rkt</a>
-        <a class="" href="/about">about.rkt</a>
-        <details id="works-details">
-            <summary>WORKS</summary>
-            <a class="" href="/works/kyosuke">KyosukeSato.rkt</a>
-            <a class="" href="/works/portfolio">Portfolio.rkt</a>
-            <a class="" href="/works/sugutabe">Sugutabe.rkt</a>
-            <a class="" href="/works/design-school">DesignSchoolLp.rkt</a>
-        </details>
-        <details id="blogs-details">
-            <summary>Blogs</summary>
-            <a class="" href="/blogs/1">daydayday</a>
-            <a class="" href="/blogs/2">daydayday</a>
-            <a class="" href="/blogs/3">daydayday</a>
-        </details>
+  <a href="/">RIKUTO NAKAO</a>
+  <details class="" id="main-details" open>
+    <summary>my-portfolio</summary>
+    <a class="gap- flex" href="/"><img src="/file.svg" alt="" />Home.rkt</a>
+    <a class="" href="/about">about.rkt</a>
+    <details id="works-details">
+      <summary>WORKS</summary>
+      <a class="" href="/works/kyosuke">KyosukeSato.rkt</a>
+      <a class="" href="/works/portfolio">Portfolio.rkt</a>
+      <a class="" href="/works/sugutabe">Sugutabe.rkt</a>
+      <a class="" href="/works/design-school">DesignSchoolLp.rkt</a>
     </details>
+    <details id="blogs-details">
+      <summary>Blogs</summary>
+      {
+        posts.map((post) => (
+          <a class="" href={`/blog/${post.id}`}>
+            {post.data.pubDate
+              .toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
+              .replaceAll('/', '-')}
+            .rkt
+          </a>
+        ))
+      }
+    </details>
+  </details>
 </header>
 
 <script>
-    function initDetails() {
-        const detailsElements = document.querySelectorAll<HTMLDetailsElement>('details[id]');
-        
-        detailsElements.forEach((details) => {
-            const saved = localStorage.getItem(details.id);
-            if (saved === 'open') {
-                details.open = true;
-            }
-        });
+  function initDetails() {
+    const detailsElements = document.querySelectorAll<HTMLDetailsElement>('details[id]');
 
-        detailsElements.forEach((details) => {
-            details.addEventListener('toggle', () => {
-                localStorage.setItem(details.id, details.open ? 'open' : 'closed');
-            });
-        });
-    }
+    detailsElements.forEach((details) => {
+      const saved = localStorage.getItem(details.id);
+      if (saved === 'open') {
+        details.open = true;
+      }
+    });
 
-    // 初回読み込み
-    document.addEventListener('DOMContentLoaded', initDetails);
-    
-    // View Transitions使用時のページ遷移後
-    document.addEventListener('astro:page-load', initDetails);
+    detailsElements.forEach((details) => {
+      details.addEventListener('toggle', () => {
+        localStorage.setItem(details.id, details.open ? 'open' : 'closed');
+      });
+    });
+  }
+
+  // 初回読み込み
+  document.addEventListener('DOMContentLoaded', initDetails);
+
+  // View Transitions使用時のページ遷移後
+  document.addEventListener('astro:page-load', initDetails);
 </script>
