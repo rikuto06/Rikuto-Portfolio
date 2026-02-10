@@ -1,8 +1,8 @@
 ---
 
-title: サンプル記事です。
-description: これはサンプルのブログ記事です。
-pubDate: 2026-02-09
+title: デジLIG中間課題「すぐ食べ」をReactで実装した話
+description: デジLIGの中間課題である「すぐ食べ」。　こちらのコーディング、自分はReactを使って実装しました。
+pubDate: 2026-02-11
 tags: ['astro', 'ブログ']
 ---
 

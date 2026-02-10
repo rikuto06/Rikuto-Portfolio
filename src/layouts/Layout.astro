@@ -2,6 +2,25 @@
 import { ViewTransitions } from 'astro:transitions';
 import Header from "@/components/Header.astro"
 import Footer from "@/components/Footer.astro"
+
+interface Props {
+	tabName?: string;
+}
+
+const { tabName } = Astro.props;
+
+// URLから自動推定
+function getDefaultTabName(pathname: string): string {
+	if (pathname === '/') return 'Home.rkt';
+	if (pathname === '/about' || pathname === '/about/') return 'about.rkt';
+	if (pathname === '/works' || pathname === '/works/') return 'works.rkt';
+	// 動的ページはpropsで渡す想定
+	const segments = pathname.replace(/\/$/, '').split('/');
+	const last = segments[segments.length - 1];
+	return `${last}.rkt`;
+}
+
+const displayTab = tabName ?? getDefaultTabName(Astro.url.pathname);
 ---
 
 <!doctype html>
@@ -11,38 +30,28 @@ import Footer from "@/components/Footer.astro"
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 		<link rel="stylesheet" href="/src/styles/global.css">
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 		<ViewTransitions />
 	</head>
-	<body>
-		<div class="flex">
+	<body class="bg-[#181818] md:pl-[5%] ">
+		<div class="flex h-screen">
 			<Header />
-			<main class="h-100 w-full overflow-scroll">
-				<slot />
-			</main>
+			<div class="flex flex-col w-full">
+				<div class="flex bg-[#181818]">
+					<div class="flex items-center w-[15.07vw] h-[3.61vw] max-w-54.25 max-h-13 px-4 bg-[#1F1F1F] text-white text-sm border-r border-[#A9A5A5]/20 border-t-2 border-t-[#0078D4] whitespace-nowrap overflow-hidden text-ellipsis">
+						{displayTab}
+					</div>
+				</div>
+				<main class="flex-1 overflow-scroll bg-[#1F1F1F] md:pt-20.25 md:pl-[8.82%] md:pr-[11%]">
+					<slot />
+				</main>
+				<Footer />
+			</div>
 		</div>
-		<Footer />
 	</body>
 </html>
-
-<style>
-	html,
-	body{
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		background-color: #181818;
-		color: white;
-	}
-	
-	a {
-		color: inherit; 
-		text-decoration: none;
-	}
-
-	a:hover {
-		text-decoration: underline;
-	}
-</style>

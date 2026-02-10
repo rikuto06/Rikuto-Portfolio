@@ -5,27 +5,30 @@ const posts = await getCollection('blog');
 const works = await getCollection('works');
 ---
 
-<header class="font-ibm h-100 w-[30%] bg-gray-500">
-  <a href="/">RIKUTO NAKAO</a>
-  <details class="" id="main-details" open>
-    <summary>my-portfolio</summary>
-    <a class="gap- flex" href="/"><img src="/file.svg" alt="" />Home.rkt</a>
-    <a class="" href="/about">about.rkt</a>
-    <details id="works-details">
-      <summary><a href="/works">WORKS</a></summary>
+<header class="font-ibm h-full w-[30%] border-r-[0.2px] border-r-[#A9A5A5] md:pt-[3.25rem] [&_a]:block [&_a]:w-full [&_a]:py-0.5 [&_a]:px-2 [&_a]:no-underline [&_a]:transition-colors [&_a]:duration-100 [&_a:hover]:bg-white/10 [&_a:hover]:no-underline [&_summary]:list-none [&_summary]:flex [&_summary]:items-center [&_summary]:cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+  <a href="/" class="md:text-[1.25rem]">RIKUTO NAKAO</a>
+  <details class="group/main" id="main-details" open>
+    <summary><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/main:rotate-0" src="/images/Vector.svg" alt="" />my-portfolio</summary>
+    <a class="flex gap-1" href="/"><img src="/images/file.svg" alt="" />Home.rkt</a>
+    <a href="/about">about.rkt</a>
+    <details class="group/works" id="works-details">
+      <summary
+        ><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/works:rotate-0" src="/images/Vector.svg" alt="" /><a href="/works">WORKS</a
+        ></summary
+      >
       {
         works.map((work) => (
-          <a class="" href={`/works/${work.id}`}>
+          <a href={`/works/${work.id}`}>
             {work.data.title}.rkt
           </a>
         ))
       }
     </details>
-    <details id="blogs-details">
-      <summary>Blogs</summary>
+    <details class="group/blogs" id="blogs-details">
+      <summary><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/blogs:rotate-0" src="/images/Vector.svg" alt="" />Blogs</summary>
       {
         posts.map((post) => (
-          <a class="" href={`/blog/${post.id}`}>
+          <a href={`/blog/${post.id}`}>
             {post.data.pubDate
               .toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
               .replaceAll('/', '-')}
@@ -61,3 +64,4 @@ const works = await getCollection('works');
   // View Transitions使用時のページ遷移後
   document.addEventListener('astro:page-load', initDetails);
 </script>
+

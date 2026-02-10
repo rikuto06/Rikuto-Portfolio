@@ -2,4 +2,20 @@
 
  @theme {
   --font-ibm: 'IBM Plex Sans', 'sans-serif';
+  --font-antonio: 'Antonio', 'sans-serif';
+  --font-zen: 'Zen Kaku Gothic New', 'sans-serif';
+}
+
+@layer base {
+  html, body {
+    @apply m-0 w-full h-full bg-[#181818] text-white;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  a:hover {
+    @apply underline;
+  }
 }
