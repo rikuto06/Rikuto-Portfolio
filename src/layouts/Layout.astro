@@ -42,12 +42,12 @@ const displayTab = tabName ?? getDefaultTabName(Astro.url.pathname);
 		<div class="flex h-screen">
 			<Header />
 			<div class="flex flex-col w-full">
-				<div class="flex bg-[#181818]">
+				<div class="hidden md:flex bg-[#181818]">
 					<div class="flex items-center w-[15.07vw] h-[3.61vw] max-w-54.25 max-h-13 px-4 bg-[#1F1F1F] text-white text-sm border-r border-[#A9A5A5]/20 border-t-2 border-t-[#0078D4] whitespace-nowrap overflow-hidden text-ellipsis">
 						{displayTab}
 					</div>
 				</div>
-				<main class="flex-1 overflow-scroll bg-[#1F1F1F] md:pt-20.25 md:pl-[8.82%] md:pr-[11%]">
+				<main class="flex-1 overflow-scroll bg-[#1F1F1F] pt-14 px-4 md:pt-20.25 md:pl-[8.82%] md:pr-[11%]">
 					<slot />
 				</main>
 				<Footer />

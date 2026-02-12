@@ -5,7 +5,29 @@ const posts = await getCollection('blog');
 const works = await getCollection('works');
 ---
 
-<header class="font-ibm h-full w-[30%] border-r-[0.2px] border-r-[#A9A5A5] md:pt-[3.25rem] [&_a]:block [&_a]:w-full [&_a]:py-0.5 [&_a]:px-2 [&_a]:no-underline [&_a]:transition-colors [&_a]:duration-100 [&_a:hover]:bg-white/10 [&_a:hover]:no-underline [&_summary]:list-none [&_summary]:flex [&_summary]:items-center [&_summary]:cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+<!-- Mobile hamburger button -->
+<button
+  id="drawer-toggle"
+  class="fixed top-3 left-3 z-50 flex items-center justify-center w-10 h-10 text-white md:hidden"
+  aria-label="メニューを開く"
+>
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+<!-- Overlay -->
+<div id="drawer-overlay" class="fixed inset-0 z-30 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+<header
+  id="header-drawer"
+  class="font-ibm h-full w-[75%] max-w-[300px] fixed top-0 left-0 z-40 -translate-x-full bg-[#181818] transition-transform duration-300 ease-in-out
+    md:static md:z-auto md:w-[30%] md:max-w-none md:translate-x-0
+    border-r-[0.2px] border-r-[#A9A5A5] pt-14 md:pt-[3.25rem] overflow-y-auto
+    [&_a]:block [&_a]:w-full [&_a]:py-0.5 [&_a]:px-2 [&_a]:no-underline [&_a]:transition-colors [&_a]:duration-100
+    [&_a:hover]:bg-white/10 [&_a:hover]:no-underline
+    [&_summary]:list-none [&_summary]:flex [&_summary]:items-center [&_summary]:cursor-pointer [&_summary::-webkit-details-marker]:hidden"
+>
   <a href="/" class="md:text-[1.25rem]">RIKUTO NAKAO</a>
   <details class="group/main" id="main-details" open>
     <summary><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/main:rotate-0" src="/images/Vector.svg" alt="" />my-portfolio</summary>
@@ -58,10 +80,47 @@ const works = await getCollection('works');
     });
   }
 
-  // 初回読み込み
-  document.addEventListener('DOMContentLoaded', initDetails);
+  function initDrawer() {
+    const toggle = document.getElementById('drawer-toggle');
+    const overlay = document.getElementById('drawer-overlay');
+    const drawer = document.getElementById('header-drawer');
 
-  // View Transitions使用時のページ遷移後
-  document.addEventListener('astro:page-load', initDetails);
+    if (!toggle || !overlay || !drawer) return;
+
+    function openDrawer() {
+      drawer!.classList.remove('-translate-x-full');
+      drawer!.classList.add('translate-x-0');
+      overlay!.classList.remove('opacity-0', 'pointer-events-none');
+      overlay!.classList.add('opacity-100', 'pointer-events-auto');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeDrawer() {
+      drawer!.classList.add('-translate-x-full');
+      drawer!.classList.remove('translate-x-0');
+      overlay!.classList.add('opacity-0', 'pointer-events-none');
+      overlay!.classList.remove('opacity-100', 'pointer-events-auto');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    toggle.addEventListener('click', () => {
+      const isOpen = drawer.classList.contains('translate-x-0');
+      isOpen ? closeDrawer() : openDrawer();
+    });
+
+    overlay.addEventListener('click', closeDrawer);
+
+    // ナビリンククリック時にドロワーを閉じる
+    drawer.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeDrawer);
+    });
+  }
+
+  function init() {
+    initDetails();
+    initDrawer();
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('astro:page-load', init);
 </script>
-
