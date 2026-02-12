@@ -10,7 +10,7 @@ const works = await getCollection('works');
   <details class="group/main" id="main-details" open>
     <summary><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/main:rotate-0" src="/images/Vector.svg" alt="" />my-portfolio</summary>
     <a class="flex! items-center gap-1" href="/"><img src="/images/file.svg" alt="" />Home.rkt</a>
-    <a href="/about">about.rkt</a>
+    <a class="flex! items-center gap-1" href="/about"><img src="/images/file.svg" alt="" />about.rkt</a>
     <details class="group/works" id="works-details">
       <summary
         ><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/works:rotate-0" src="/images/Vector.svg" alt="" /><a href="/works">WORKS</a
@@ -18,8 +18,8 @@ const works = await getCollection('works');
       >
       {
         works.map((work) => (
-          <a href={`/works/${work.id}`}>
-            {work.data.title}.rkt
+          <a class="flex! items-center gap-1" href={`/works/${work.id}`}>
+            <img src="/images/file.svg" alt="" />{work.data.title}.rkt
           </a>
         ))
       }
@@ -28,8 +28,8 @@ const works = await getCollection('works');
       <summary><img class="w-2.5 h-2.5 mr-1 transition-transform duration-200 -rotate-90 group-open/blogs:rotate-0" src="/images/Vector.svg" alt="" />Blogs</summary>
       {
         posts.map((post) => (
-          <a href={`/blog/${post.id}`}>
-            {post.data.pubDate
+          <a class="flex! items-center gap-1" href={`/blog/${post.id}`}>
+            <img src="/images/file.svg" alt="" />{post.data.pubDate
               .toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
               .replaceAll('/', '-')}
             .rkt

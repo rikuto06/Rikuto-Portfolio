@@ -18,8 +18,8 @@ const { Content } = await render(post);
 <Layout
   tabName={`${pubDate.toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replaceAll('/', '-')}.rkt`}
 >
-  <h1>{title}</h1>
+  <h1 class="text-[2rem]">{title}</h1>
   <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('ja-JP')}</time>
-  <p>{description}</p>
+  <p class="mt-[3rem]">{description}</p>
   <Content />
 </Layout>
