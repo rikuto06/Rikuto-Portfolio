@@ -14,10 +14,8 @@ const works = await getCollection('works');
           <li>
             <a href={`/works/${work.id}`}>
               <h2>{work.data.title}</h2>
-              <p>{work.data.description}</p>
-              <time datetime={work.data.pubDate.toISOString()}>
-                {work.data.pubDate.toLocaleDateString('ja-JP')}
-              </time>
+              <img src={work.data.image} alt={work.data.title}>
+              <p>{work.data.kind}</p>
             </a>
           </li>
         ))

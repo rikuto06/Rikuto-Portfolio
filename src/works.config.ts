@@ -8,6 +8,7 @@ export const worksSchema = z.object({
   image: z.string().optional(),
   url: z.string().optional(),
   tags: z.array(z.string()).default([]),
+  kind: z.string()
 });
 
 export type WorksFrontmatter = z.infer<typeof worksSchema>;
