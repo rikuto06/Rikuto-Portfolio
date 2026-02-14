@@ -33,5 +33,20 @@ const { Content } = await render(work);
       </a>
     )
   }
-  <Content />
+  <div class="work-content">
+    <Content />
+  </div>
 </Layout>
+
+<style>
+  .work-content :global(h2) {
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-content :global(p) {
+    margin-top: 0;
+    line-height: 200%;
+  }
+</style>

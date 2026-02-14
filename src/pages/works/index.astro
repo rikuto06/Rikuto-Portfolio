@@ -14,7 +14,7 @@ const works = await getCollection('works');
           <li>
             <a href={`/works/${work.id}`}>
               <h2>{work.data.title}</h2>
-              <img src={work.data.image} alt={work.data.title}>
+              <img src={work.data.image} alt={work.data.title} class="w-full aspect-3/2 object-cover object-top">
               <p>{work.data.kind}</p>
             </a>
           </li>
