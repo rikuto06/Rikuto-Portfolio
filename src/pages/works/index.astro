@@ -7,8 +7,8 @@ const works = await getCollection('works');
 
 <Layout>
   <main>
-    <h1>WORKS</h1>
-    <ul class="grid grid-cols-2 gap-x-10 gap-y-20">
+    <h1 class="text-[2rem] md:text-[3rem]">WORKS</h1>
+    <ul class="grid grid-cols-1 gap-y-10 mt-8 md:grid-cols-2 md:gap-x-10 md:gap-y-20 md:mt-15">
       {
         works.map((work) => (
           <li>

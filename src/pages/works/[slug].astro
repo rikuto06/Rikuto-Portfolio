@@ -16,19 +16,19 @@ const { Content } = await render(work);
 ---
 
 <Layout tabName={`${title}.rkt`}>
-  <h1>{title}</h1>
+  <h1 class="text-[1.5rem] md:text-[2rem]">{title}</h1>
   <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('ja-JP')}</time>
-  <p>{description}</p>
+  <p class="mt-4 leading-[200%]">{description}</p>
   {
     image && (
-      <figure>
-        <img src={image} alt={title}/>
+      <figure class="mt-6">
+        <img src={image} alt={title} class="w-full"/>
       </figure>
     )
   }
   {
     url && (
-      <a href={url} target="_blank" rel="noopener noreferrer">
+      <a href={url} target="_blank" rel="noopener noreferrer" class="inline-block mt-4">
         プロジェクトを見る
       </a>
     )
