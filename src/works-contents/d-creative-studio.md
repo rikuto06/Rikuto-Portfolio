@@ -3,7 +3,7 @@ title: D-creative studio
 description: ドローン空撮映像を主に扱うD-creative studioさまのコーポレートサイトを制作中です。
 pubDate: 2026-02-08
 image: ../assets/D-creative-studio.png
-url: ""
+url: ''
 tags: ['Web', 'デザイン']
 kind: private work portfolio site
 ---

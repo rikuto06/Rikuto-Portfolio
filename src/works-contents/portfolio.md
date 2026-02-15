@@ -3,7 +3,7 @@ title: RikutoNakao-Portfolio
 description: フロントエンドエンジニアへの転職活動用にポートフォリオを作りました。
 pubDate: 2026-02-08
 image: ../assets/portfolio.png
-url: ""
+url: ''
 tags: ['Web', 'デザイン']
 kind: private work portfolio site
 ---
@@ -21,7 +21,6 @@ Figma / Visual Studio Code
 Astro / tailwindCSS
 
 ## 制作の意図等
-
 
 忙しい採用担当の方々がストレスなく閲覧できるよう、ハイパフォーマンスなサイト実装が可能なASTROを選定しました。
 各コンテンツのmdファイルを作成しその内容を[slug].ASTROに反映することで保守性に優れたコードになるようにしました。

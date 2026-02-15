@@ -1,5 +1,4 @@
 ---
-
 title: サンプル記事
 description: これはサンプルのブログ記事です。
 pubDate: 2026-02-08

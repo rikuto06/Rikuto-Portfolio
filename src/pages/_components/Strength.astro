@@ -1,72 +1,69 @@
 ---
-
 const STRENGTHS = [
-{
-    title: "課題解決力",
+  {
+    title: '課題解決力',
     items: [
       {
-        heading: "課題に沿った技術提案",
+        heading: '課題に沿った技術提案',
         description:
-          "クライアントの課題に対して、流行や好みではなく目的に沿った技術選定・提案を行います。その提案に責任を持てるよう、必要な技術については継続的に学習しています。",
+          'クライアントの課題に対して、流行や好みではなく目的に沿った技術選定・提案を行います。その提案に責任を持てるよう、必要な技術については継続的に学習しています。',
       },
       {
-        heading: "課題に沿った技術提案",
+        heading: '課題に沿った技術提案',
         description:
-          "クライアントの課題に対して、流行や好みではなく目的に沿った技術選定・提案を行います。その提案に責任を持てるよう、必要な技術については継続的に学習しています。",
+          'クライアントの課題に対して、流行や好みではなく目的に沿った技術選定・提案を行います。その提案に責任を持てるよう、必要な技術については継続的に学習しています。',
       },
     ],
-    
   },
   {
-    title: "行動力",
+    title: '行動力',
     items: [
       {
-        heading: "成長機会を自ら取りに行く行動力",
+        heading: '成長機会を自ら取りに行く行動力',
         description:
-          "スクール内でNext.jsを扱える講師が1名しかいなかったため、家から約2時間かけて、ほぼ毎週直接指導を受けに通っていたこともあります。与えられた環境に依存せず、自ら成長機会を取りに行く姿勢を大切にしています。",
+          'スクール内でNext.jsを扱える講師が1名しかいなかったため、家から約2時間かけて、ほぼ毎週直接指導を受けに通っていたこともあります。与えられた環境に依存せず、自ら成長機会を取りに行く姿勢を大切にしています。',
       },
       {
-        heading: "与えられた範囲に留まらない学習姿勢",
+        heading: '与えられた範囲に留まらない学習姿勢',
         description:
-          "成長に必要だと感じたことには自ら動いて取り組む行動力があります。現在通っているWebスクールでは、HTML / CSS / 簡単なJavaScriptやjQueryが中心ですが、将来的にフロントエンドエンジニアとして価値を出すために将来的に必要になると考え、カリキュラム外でReact、Astro、Tailwind CSS、Next.js、TypeScript等の学習を進めてきました。",
+          '成長に必要だと感じたことには自ら動いて取り組む行動力があります。現在通っているWebスクールでは、HTML / CSS / 簡単なJavaScriptやjQueryが中心ですが、将来的にフロントエンドエンジニアとして価値を出すために将来的に必要になると考え、カリキュラム外でReact、Astro、Tailwind CSS、Next.js、TypeScript等の学習を進めてきました。',
       },
     ],
-    
   },
   {
-    title: "協調性",
+    title: '協調性',
     items: [
       {
-        heading: "チームで成果を出す姿勢",
+        heading: 'チームで成果を出す姿勢',
         description:
-          "これまで長年サッカーに取り組み、チームスポーツの中で協調性や責任感を培ってきました。キャプテンを務めた経験もあり、チーム全体を見ながら行動することや、周囲を巻き込みながら目標に向かう姿勢を大切にしています。",
+          'これまで長年サッカーに取り組み、チームスポーツの中で協調性や責任感を培ってきました。キャプテンを務めた経験もあり、チーム全体を見ながら行動することや、周囲を巻き込みながら目標に向かう姿勢を大切にしています。',
       },
       {
-        heading: "チーム制作への取り組み",
+        heading: 'チーム制作への取り組み',
         description:
-          "クライアントワークではスクールで知り合ったメンバーとチームを組み、ディレクション担当と分業しながら、私はデザインから実装までを担当しました。個人作業だけでなく、チームで価値を出すことにも前向きに取り組めます。",
+          'クライアントワークではスクールで知り合ったメンバーとチームを組み、ディレクション担当と分業しながら、私はデザインから実装までを担当しました。個人作業だけでなく、チームで価値を出すことにも前向きに取り組めます。',
       },
     ],
-    
   },
 ];
-
 ---
 
 <section class="mt-16 md:mt-32">
-  <h3 class="text-[2rem] md:text-[3rem] font-ibm">STRENGTH</h3>
+  <h3 class="font-ibm text-[2rem] md:text-[3rem]">STRENGTH</h3>
 
-  {STRENGTHS.map((strength) => (
-    <div class="md:flex md:justify-between mt-20">
-      <h4 class="text-[1.5rem] md:text-[2rem]">{strength.title}</h4>
-      <div class="mt-6 md:mt-0 md:w-[60%]">
-        {strength.items.map((item, i) => (
-          <div class={i > 0 ? "mt-10 md:mt-20" : ""}>
-            <h5 class="text-[1.25rem] md:text-[1.5rem] font-bold">{item.heading}</h5>
-            <p class="mt-3 leading-[200%]">{item.description}</p>
-          </div>
-        ))}
+  {
+    STRENGTHS.map((strength) => (
+      <div class="mt-20 md:flex md:justify-between">
+        <h4 class="text-[1.5rem] md:text-[2rem]">{strength.title}</h4>
+        <div class="mt-6 md:mt-0 md:w-[60%]">
+          {strength.items.map((item, i) => (
+            <div class={i > 0 ? 'mt-10 md:mt-20' : ''}>
+              <h5 class="text-[1.25rem] font-bold md:text-[1.5rem]">{item.heading}</h5>
+              <p class="mt-3 leading-[200%]">{item.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </section>

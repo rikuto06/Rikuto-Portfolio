@@ -17,7 +17,7 @@ const { Content } = await render(work);
 ---
 
 <Layout tabName={`${title}.rkt`}>
-  <h1 class="text-[1.5rem] md:text-[2rem] font-ibm">{title}</h1>
+  <h1 class="font-ibm text-[1.5rem] md:text-[2rem]">{title}</h1>
   <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('ja-JP')}</time>
   <p class="mt-4 leading-[200%]">{description}</p>
   {
@@ -29,7 +29,7 @@ const { Content } = await render(work);
   }
   {
     url && (
-      <a href={url} target="_blank" rel="noopener noreferrer" class="inline-block mt-4">
+      <a href={url} target="_blank" rel="noopener noreferrer" class="mt-4 inline-block">
         プロジェクトを見る
       </a>
     )
