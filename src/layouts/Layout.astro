@@ -2,6 +2,7 @@
 import { ViewTransitions } from 'astro:transitions';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import '@/styles/global.css';
 
 interface Props {
   tabName?: string;
@@ -34,7 +35,6 @@ const displayTab = tabName ?? getDefaultTabName(Astro.url.pathname);
       href="https://fonts.googleapis.com/css2?family=Antonio:wght@100..700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Barcode+128&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/src/styles/global.css" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
     <ViewTransitions />
