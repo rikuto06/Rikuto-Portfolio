@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { getCollection, render } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 
@@ -16,13 +17,13 @@ const { Content } = await render(work);
 ---
 
 <Layout tabName={`${title}.rkt`}>
-  <h1 class="text-[1.5rem] md:text-[2rem]">{title}</h1>
+  <h1 class="text-[1.5rem] md:text-[2rem] font-ibm">{title}</h1>
   <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('ja-JP')}</time>
   <p class="mt-4 leading-[200%]">{description}</p>
   {
     image && (
       <figure class="mt-6">
-        <img src={image} alt={title} class="w-full"/>
+        <Image src={image} alt={title} class="w-full" />
       </figure>
     )
   }

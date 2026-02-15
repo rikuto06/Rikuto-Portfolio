@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import soccerImg from '@/assets/soccer.JPG';
+import southernImg from '@/assets/Southern.JPG';
+
+const FAVORITES = [
+  {
+    image: soccerImg,
+    title: "サッカー",
+    description: "小学生〜大学生までプレーしました。大怪我をして辞めてしまいましたが、今も遊び感覚ではありますが友人のチームの助っ人等でプレーしたりしています！",
+  },
+  {
+    image: southernImg,
+    title: "サザンオールスターズ",
+    description: "中学生の時からずっとサザンの大ファンです!!!",
+  },
+  {
+    image: southernImg,
+    title: "ヘアメイク",
+    description: "美容師の資格等切持っていませんが、ヘアセットなどが得意です。",
+  },
+];
+---
+
+<section class="mt-16 md:mt-32">
+  <h3 class="text-[2rem] md:text-[3rem] font-ibm">OFF THE PITCH</h3>
+  <div class="md:grid md:grid-cols-2 md:ml-80 md:gap-0 md:gap-y-6 mt-10 md:mt-20">
+    {FAVORITES.map((favorite, i) => (
+      <div class:list={["relative overflow-hidden group cursor-pointer aspect-square w-full md:size-60", i > 0 && "mt-8 md:mt-0"]}>
+        <Image src={favorite.image} alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gray-800/60 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-3">
+          <div class="text-white text-xl font-bold">{favorite.title}</div>
+          <p class="mt-1.5 text-sm md:text-base">{favorite.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

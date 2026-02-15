@@ -4,6 +4,7 @@
   --font-ibm: 'IBM Plex Sans', 'sans-serif';
   --font-antonio: 'Antonio', 'sans-serif';
   --font-zen: 'Zen Kaku Gothic New', 'sans-serif';
+  --font-barcode: 'Libre Barcode 128', 'cursive';
 }
 
 @layer base {
