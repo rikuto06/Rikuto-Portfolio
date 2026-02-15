@@ -28,3 +28,5 @@ Figma
 ## 制作期間
 
 1ヶ月
+
+![LPフルイメージ](../assets/Lpfullimg.png)
