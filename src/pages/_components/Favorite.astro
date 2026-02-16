@@ -10,22 +10,22 @@ const FAVORITES = [
     image: soccerImg,
     title: 'サッカー',
     description:
-      '小学生〜大学生までプレーしました。大怪我をして辞めてしまいましたが、今も遊び感覚ではありますが友人のチームの助っ人等でプレーしたりしています！',
+      '小学生〜大学生までプレーしました。幼少期から浦和レッズファンで、観戦するのも好きです!',
   },
   {
     image: southernImg,
     title: 'サザンオールスターズ',
-    description: '中学生の時からずっとサザンの大ファンです!!!',
+    description: '中学生の時からずっとサザンの大ファンです!',
   },
   {
     image: HairImg,
     title: 'ヘアメイク',
-    description: '美容師の資格等切持っていませんが、ヘアセットが異常に得意です。',
+    description: '美容師の資格等切持っていませんが、ヘアセットが得意です!',
   },
   {
     image: koreaImg,
     title: '韓国',
-    description: '韓国に友達がいるため、kpopもドラマも食べ物も髪型も詳しいです!!',
+    description: '韓国に友達がいるため、kpopもドラマも食べ物も髪型も詳しいです!',
   },
 ];
 ---
@@ -44,7 +44,7 @@ const FAVORITES = [
           <Image src={favorite.image} alt="" class="h-full w-full object-cover" />
           <div class="absolute inset-0 flex flex-col items-center justify-center bg-gray-800/60 px-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
             <div class="text-xl font-bold text-white">{favorite.title}</div>
-            <p class="mt-1.5 text-sm md:text-base">{favorite.description}</p>
+            <p class="mt-1.5 text-sm text-white md:text-base">{favorite.description}</p>
           </div>
         </div>
       ))
