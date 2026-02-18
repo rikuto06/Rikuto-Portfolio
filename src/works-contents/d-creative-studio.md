@@ -6,6 +6,7 @@ image: ../assets/D-creative-studio.png
 url: ''
 tags: ['Web', 'デザイン']
 kind: private work portfolio site
+order: 5
 ---
 
 ## 担当制作範囲

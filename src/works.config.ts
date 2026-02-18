@@ -11,4 +11,5 @@ export const worksSchema = ({ image }: SchemaContext) =>
     url: z.string().optional(),
     tags: z.array(z.string()).default([]),
     kind: z.string(),
+    order: z.number().default(999),
   });

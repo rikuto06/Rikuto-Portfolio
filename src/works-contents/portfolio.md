@@ -6,6 +6,7 @@ image: ../assets/portfolio.png
 url: 'https://rikuto-portfolio-red.vercel.app/'
 tags: ['Web', 'デザイン']
 kind: private work portfolio site
+order: 1
 ---
 
 ## 担当制作範囲

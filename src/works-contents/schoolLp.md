@@ -6,6 +6,7 @@ image: ../assets/schoolLp.png
 url: ''
 tags: ['Web', 'デザイン']
 kind: private work portfolio site
+order: 4
 ---
 
 ## 担当制作範囲

@@ -6,6 +6,7 @@ image: ../assets/KYOSUKE SATO .png
 url: 'https://sato-kyosuke.zhongweiluren0.workers.dev/'
 tags: ['Web', 'デザイン']
 kind: client work branding site
+order: 2
 ---
 
 ## 担当制作範囲

@@ -6,6 +6,7 @@ image: ../assets/sugutabe.png
 url: 'https://sugutabe.vercel.app/'
 tags: ['Web', 'デザイン']
 kind: School assignment LP site
+order: 3
 ---
 
 ## 担当制作範囲
