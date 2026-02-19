@@ -18,7 +18,6 @@ const { Content } = await render(work);
 
 <Layout tabName={`${title}.rkt`}>
   <h1 class="font-ibm text-[1.5rem] md:text-[2rem]">{title}</h1>
-  <time datetime={pubDate.toISOString()}>{pubDate.toLocaleDateString('ja-JP')}</time>
   <p class="mt-4 leading-[200%]">{description}</p>
   {
     image && (
