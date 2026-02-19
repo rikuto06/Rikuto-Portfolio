@@ -13,3 +13,37 @@ import Skills from '../_components/Skills.astro';
   <Skills />
   <Favorite />
 </Layout>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
+
+  gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
+
+  function initScramble() {
+    document.querySelectorAll<HTMLElement>('[data-scramble]').forEach((el) => {
+      const targetText = el.dataset.scramble ?? el.textContent ?? '';
+
+      ScrollTrigger.create({
+        trigger: el,
+        scroller: 'main',
+        start: 'top 85%',
+        once: true,
+        onEnter: () => {
+          gsap.to(el, {
+            duration: 0.5,
+            scrambleText: {
+              text: targetText,
+              chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+              revealDelay: 0.1,
+              speed: 10,
+            },
+          });
+        },
+      });
+    });
+  }
+
+  document.addEventListener('astro:page-load', initScramble);
+</script>
