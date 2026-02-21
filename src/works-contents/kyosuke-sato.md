@@ -18,7 +18,7 @@ Figma / Visual Studio Code
 
 ## 選定技術
 
-Next.js / tailwindCSS / GSAP
+Next.js / Tailwind CSS / GSAP
 
 ## 制作の意図等
 

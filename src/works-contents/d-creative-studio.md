@@ -14,11 +14,11 @@ kind: private work portfolio site
 
 ## 使用ツール
 
-Figma / Visual Studio Code　/ WordPress
+Figma / Visual Studio Code / WordPress
 
 ## 選定技術
 
-PHP / tailwindCSS / WordPress
+PHP / Tailwind CSS / WordPress
 
 ## 制作の意図等
 

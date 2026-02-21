@@ -18,7 +18,7 @@ Figma / Visual Studio Code
 
 ## 選定技術
 
-Astro / tailwindCSS
+Astro / Tailwind CSS
 
 ## 制作の意図等
 
