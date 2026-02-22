@@ -60,4 +60,10 @@ const { Content } = await render(post);
   .blog-content :global(a:hover) {
     color: #93c5fd;
   }
+  .blog-content :global(iframe) {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
 </style>
