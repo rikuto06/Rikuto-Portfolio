@@ -3,7 +3,7 @@ title: RikutoNakao-Portfolio
 description: フロントエンドエンジニアへの転職活動用にポートフォリオを作りました。
 pubDate: 2026-02-08
 image: ../assets/portfolio.png
-url: 'https://rikuto-portfolio-red.vercel.app/'
+url: 'https://rikuto-portfolio.pages.dev/'
 tags: ['Web', 'デザイン']
 kind: private work portfolio site
 ---
