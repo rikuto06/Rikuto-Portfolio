@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { title,  pubDate } = post.data;
+const { title, pubDate } = post.data;
 const { Content } = await render(post);
 ---
 
@@ -26,12 +26,38 @@ const { Content } = await render(post);
 </Layout>
 
 <style>
-  .blog-content { font-size: 1.25rem; line-height: 2; }
-  .blog-content :global(h1) { font-size: 2rem; font-weight: bold; margin-bottom: 0.5em; }
-  .blog-content :global(h2) { font-size: 1.5rem; font-weight: bold; margin-bottom: 0.5em; }
-  .blog-content :global(h3) { font-size: 1.17rem; font-weight: bold; margin-bottom: 0.5em; }
-  .blog-content :global(h4) { font-size: 1rem; font-weight: bold; margin-bottom: 0.5em; }
-  .blog-content :global(p) { font-size: 1.25rem; }
-  .blog-content :global(a) { color: #60a5fa; text-decoration: underline; }
-  .blog-content :global(a:hover) { color: #93c5fd; }
+  .blog-content {
+    font-size: 1.25rem;
+    line-height: 2;
+  }
+  .blog-content :global(h1) {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  .blog-content :global(h2) {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  .blog-content :global(h3) {
+    font-size: 1.17rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  .blog-content :global(h4) {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+  }
+  .blog-content :global(p) {
+    font-size: 1.25rem;
+  }
+  .blog-content :global(a) {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  .blog-content :global(a:hover) {
+    color: #93c5fd;
+  }
 </style>

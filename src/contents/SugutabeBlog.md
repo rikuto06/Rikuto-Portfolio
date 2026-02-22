@@ -32,7 +32,7 @@ pubDate: 2026-02-22
 <br>
 <br>
 最初はHTMLのimgタグに「loading="lazy"」をつけたり、pictureタグを使うなど、少しでも最適に近いコードを書くように調べては実践してみることを繰り返していました。
-調べるときは[「令和のHTML / CSS / JavaScriptの書き方50選」](https://zenn.dev/necscat/articles/bc9bba54babaf5)のような記事を見て、疑問に思ったことなどはAIに聞くなどして学習を進めました。AIに聞いているうちに「ReactやNext.jsなどを今後触ってみるといいかもしれませんね」と言われました。実際この段階でXでエンジニアの方などをフォローしていたので「React」という言葉は目にしたことはありました。AIにReactとNext.jsどちらが難しいかを聞いてみると、まずReactを触ると良いとのことでした。また、「私は基本的なHTML、CSS、JavaScriptは勉強したけど、Reactを勉強するにはまだ早いですか」と聞いてみると、それならReactを勉強するべきだと言われ、早速触ってみることにしました。
+調べるときは<a href="https://zenn.dev/necscat/articles/bc9bba54babaf5" target="_blank" aria-label="Zennの「令和のHTML / CSS / JavaScriptの書き方50選」の記事に遷移します。">令和のHTML / CSS / JavaScriptの書き方50選</a>のような記事を見て、疑問に思ったことなどはAIに聞くなどして学習を進めました。AIに聞いているうちに「ReactやNext.jsなどを今後触ってみるといいかもしれませんね」と言われました。実際この段階でXでエンジニアの方などをフォローしていたので「React」という言葉は目にしたことはありました。AIにReactとNext.jsどちらが難しいかを聞いてみると、まずReactを触ると良いとのことでした。また、「私は基本的なHTML、CSS、JavaScriptは勉強したけど、Reactを勉強するにはまだ早いですか」と聞いてみると、それならReactを勉強するべきだと言われ、早速触ってみることにしました。
 <br>
 <br>
 
