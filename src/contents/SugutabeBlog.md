@@ -1,7 +1,6 @@
 ---
 title: デジLIG中間課題「すぐ食べ」をReactで実装した話
-pubDate: 2026-02-11
-tags: ['astro', 'ブログ']
+pubDate: 2026-02-22
 ---
 
 私が通っているデジタルハリウッド STUDIO by LIGでは中間課題というものがあります。こちらは主に野菜の産地直送サービス「すぐ食べ」のランディングページを、デザインからコーディングまで一貫して制作するものです。
@@ -46,7 +45,8 @@ tags: ['astro', 'ブログ']
 <br>
 <br>
 とはいえ、つべこべ言っても仕方ないです。中間課題は卒業制作の開始に間に合わせなければならないため、学習を開始するしかありません。そこで私は以下のYouTubeの動画を見て学習をしました。
-https://youtu.be/TgU-FT2WdS4?si=NQnoSdF_0jDBI9jS
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TgU-FT2WdS4?si=TdOcO1LEi5xtR75_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 <br>
 一回動画の通りにコードを書いた感想は、正直「俺、React無理かも」でした。
