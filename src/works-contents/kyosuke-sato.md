@@ -3,7 +3,7 @@ title: Kyosuke Sato
 description: 中目黒に拠点を置くフリーランス理容師、佐藤京介さまのサイトを作成しました。
 pubDate: 2026-02-08
 image: ../assets/KYOSUKE SATO .png
-url: 'https://sato-kyosuke.zhongweiluren0.workers.dev/'
+url: 'https://satokyosuke.pages.dev/'
 tags: ['Web', 'デザイン']
 kind: client work branding site
 ---
