@@ -1,8 +1,8 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import '@/styles/global.css';
+import ClientRouter from 'astro/components/ClientRouter.astro';
 
 interface Props {
   tabName?: string;
@@ -37,7 +37,7 @@ const displayTab = tabName ?? getDefaultTabName(Astro.url.pathname);
     />
     <meta name="generator" content={Astro.generator} />
     <title>Rikuto-Portfolio</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="font-zen bg-[#181818] md:pl-[5%]">
     <div class="flex h-dvh">
