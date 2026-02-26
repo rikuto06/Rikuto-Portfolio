@@ -81,12 +81,9 @@ const navLinks = [
       >
       {
         posts.map((post) => (
-          <a class="flex! items-center gap-1" href={`/blog/${post.id}`}>
+          <a class="flex! items-center gap-1 text-[0.8rem]" href={`/blog/${post.id}`}>
             <img src="/images/file.svg" alt="" />
-            {post.data.pubDate
-              .toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' })
-              .replaceAll('/', '-')}
-            .rkt
+            {post.data.title}.rkt
           </a>
         ))
       }
