@@ -32,12 +32,12 @@ const FAVORITES = [
 
 <section class="mt-16 md:mt-32">
   <h3 class="font-ibm text-[2rem] md:text-[3rem]" data-scramble="OFF THE PITCH">OFF THE PITCH</h3>
-  <div class="mt-10 md:mt-20 md:ml-80 md:grid md:grid-cols-2 md:gap-0 md:gap-y-6">
+  <div class="mt-10 md:mt-20 md:ml-[40%] md:grid md:grid-cols-2 md:gap-4">
     {
       FAVORITES.map((favorite, i) => (
         <div
           class:list={[
-            'group relative aspect-square w-full cursor-pointer overflow-hidden md:size-60',
+            'group relative aspect-square w-full cursor-pointer overflow-hidden',
             i > 0 && 'mt-8 md:mt-0',
           ]}
           tabindex="0"
